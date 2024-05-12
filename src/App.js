@@ -1,7 +1,9 @@
-import { useState } from "react";
+import { useCounter } from "./hooks/useCounter";
+import { useIsOnline } from "./hooks/useIsOnline";
 function App() {
 
-  const [count, setCount] = useState(0);
+  const counter = useCounter();
+  const isOnline = useIsOnline();
 
   /**
    * Using const with useState will not work in case of count++ or ++count
@@ -14,13 +16,12 @@ function App() {
    * since count is 1 now so 1 is assigned to state and then it is incremented by 1, hence it took 2 click
    * to update the actual value, we can use ++count to resolve it
    * but recommended way is we should use const for state initialization and then use count+1 to increment the actual counter
-   * 
    */
   return (
     <div className="App">
-     
-     <button onClick={() => {setCount(count+1)}}>Click Me</button>
-     <p>Count {count}</p>
+     {isOnline ? "Online": "Offline"}
+     {counter}
+    
     </div>
   );
 }
