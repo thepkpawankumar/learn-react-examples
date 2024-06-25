@@ -3,11 +3,10 @@ import { useIsOnline } from "./hooks/useIsOnline";
 import { useFormInput } from "./hooks/useFormInput";
 
 function App() {
-
+  
   const counter = useCounter();
   const isOnline = useIsOnline();
   
-
   /**
    * Using const with useState will not work in case of count++ or ++count
    * As count++ and ++count assign value back to variable and since count is constant
@@ -28,12 +27,9 @@ function App() {
     <div className="App">
      {isOnline ? "Online": "Offline"}
      {counter}
-
       First Name: <input type="text" value={firstNameProps.value} onChange={firstNameProps.handleValueChange} />
       Last Name: <input type="text" value={lastNameProps.value} onChange={lastNameProps.handleValueChange} />
-
       Name: {firstNameProps.value} {lastNameProps.value}
-    
     </div>
   );
 }
