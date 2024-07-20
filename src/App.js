@@ -30,7 +30,6 @@ function App() {
       First Name: <input type="text" value={firstNameProps.value} onChange={firstNameProps.handleValueChange} />
       Last Name: <input type="text" value={lastNameProps.value} onChange={lastNameProps.handleValueChange} />
       Name: {firstNameProps.value} {lastNameProps.value}
-
     </div>
   );
 }
