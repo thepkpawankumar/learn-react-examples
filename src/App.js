@@ -6,6 +6,7 @@ function App() {
   
   const counter = useCounter();
   const isOnline = useIsOnline();
+
   
   /**
    * Using const with useState will not work in case of count++ or ++count
